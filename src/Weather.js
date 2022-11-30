@@ -64,6 +64,9 @@ export default function Weather() {
           </ul>
         </div>
       </div>
+      <div>
+      <a href="https://github.com/ValeriaBodrova/my-app-weather">Open-soursed</a>,by <a href="https://bucolic-bubblegum-022291.netlify.app/">Valeria Bodrova</a> from <a href="https://www.shecodes.io/">SheCodes</a>
+      </div>
     </div>
   );
 }
