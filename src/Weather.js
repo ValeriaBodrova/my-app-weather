@@ -1,19 +1,16 @@
 
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import bootstrap from "bootstrap";
+
 
 export default function Weather() {
-  let weatherData = {
-    city: "Kyiv",
-    temperature: 12,
-    date: "Friday 11:00",
-    description: "Cloudy",
-    imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-    humidity: 20,
-    wind: 10
-  };
+
+const [weatherData, setWeatherData] = useState({});
+const [ready, setReady] = useState(false);
+
+
+if (ready){
 
   return (
     <div className="Weather">
@@ -52,7 +49,7 @@ export default function Weather() {
               className="float-left"
             />
             <div className="float-left">
-              <strong>{weatherData.temperature}</strong>
+              <strong>{Math.round(weatherData.temperature)}</strong>
               <span className="units">
                 <a href="/">°C</a> | <a href="/">°F</a>
               </span>
@@ -70,6 +67,27 @@ export default function Weather() {
         <a href="https://github.com/ValeriaBodrova/my-app-weather">Open-soursed</a> by <a href="https://bucolic-bubblegum-022291.netlify.app/">Valeria Bodrova</a> from <a href="https://www.shecodes.io/">SheCodes</a>
         </div>
     </div>
-    
   );
+} else {
+    function handleTemp(response){
+        console.log(response.data);
+    setWeatherData({
+temperature: response.data.temperature.current,
+city: response.data.city,
+wind: response.data.wind.speed,
+humidity: response.data.temperature.humidity,
+description: response.data.condition.description,
+date: response.data.time
+    }
+       );
+    setReady(true);
+    }
+    
+        const key = "of8d835eb2e54e8t80a14b484afc54de";
+        let query = "Kyiv"
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${key}&units=metric`;
+    axios.get(apiUrl).then(handleTemp);
+    return "Loading...";
+}
+  
 }
