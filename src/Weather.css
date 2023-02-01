@@ -67,3 +67,6 @@
     white-space: nowrap;
   }
   
+  .Weather canvas {
+    margin: 10px auto;
+  }
