@@ -70,3 +70,12 @@
   .Weather canvas {
     margin: 10px auto;
   }
+
+  .weather-forecast{
+    text-align: center;
+  }
+
+.WeatherForecast-temperatures{
+  display: flex;
+  justify-content: space-around;
+}

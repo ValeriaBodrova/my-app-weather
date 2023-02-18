@@ -13,13 +13,15 @@ export default function WeatherInfo(props){
       <li>{props.info.description}</li>
     </ul>
   </div>
-  <div className="row">
+  <div className="row mt-3">
     <div className="col-6">
       <div className="clearfix weather-temperature">
-      <div>
+        <div className="float-left d-inline-flex">
        <WeatherIcon code={props.info.icon}  />
        </div>
+       <div className="d-inline-flex p-3"  >
        <WeatherTempConversion celsius={props.info.temperature} />
+      </div>
       </div>
     </div>
     <div className="col-6">
@@ -29,9 +31,7 @@ export default function WeatherInfo(props){
       </ul>
     </div>
   </div>
-    <div>
-    <a href="https://github.com/ValeriaBodrova/my-app-weather">Open-soursed</a> by <a href="https://bucolic-bubblegum-022291.netlify.app/">Valeria Bodrova</a> from <a href="https://www.shecodes.io/">SheCodes</a>
-    </div>
+    
     </div>
     );
 }

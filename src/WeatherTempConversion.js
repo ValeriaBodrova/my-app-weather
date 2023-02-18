@@ -22,7 +22,7 @@ function showCelsius(event){
         </span>
       </div>)
    } else {
-    let fahrenheit = (props.celsius * 9 ) / 5 *32;
+    let fahrenheit = (props.celsius * 9  / 5 ) + 32;
     return (
         
         <div>

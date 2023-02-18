@@ -17,7 +17,7 @@ h1 {
 
 ul {
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
 }
 
 li {
@@ -33,4 +33,9 @@ li {
 
 li:first-letter {
   text-transform: capitalize;
+}
+
+.footer{
+  font-size: 11px;
+  text-align: center;
 }
